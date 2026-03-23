@@ -42,16 +42,13 @@ def print_divider():
 
 
 def get_job_description_interactive() -> str:
-    """Get job description through interactive input or stdin pipe"""
+    """Get job description through interactive input"""
     print("📋 Paste the job description below.")
     print("   (Press Enter twice when done, or type 'quit' to exit)\n")
     print("-" * 60)
     
     lines = []
     empty_count = 0
-    
-    # Detect if running from pipe (non-interactive)
-    is_pipe = not sys.stdin.isatty()
     
     while True:
         try:
@@ -69,19 +66,10 @@ def get_job_description_interactive() -> str:
             else:
                 empty_count = 0
                 lines.append(line)
-                
         except EOFError:
-            # When piped, EOF means end of input — return whatever we have
             break
     
-    result = "\n".join(lines).strip()
-    
-    # If piped and got content, return it
-    # If piped and empty, return None to exit
-    if not result and is_pipe:
-        return None
-        
-    return result if result else None
+    return "\n".join(lines).strip()
 
 
 def process_single_jd(

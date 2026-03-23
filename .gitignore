@@ -1,0 +1,13 @@
+.env
+/outputs
+/uploads
+*.log
+*.tmp
+.DS_Store
+.idea/
+.vscode/
+node_modules/
+dist/
+build/
+_pycache__/
+.claude/

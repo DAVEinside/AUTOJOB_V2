@@ -1,0 +1,30 @@
+# Resume & Cover Letter Tailoring System
+# Dependencies
+
+# Core
+anthropic>=0.39.0
+
+# Document Processing (python-docx is NOT used for editing - we use XML directly)
+# This is intentional to preserve exact formatting
+
+# PDF Generation (using system tools: LibreOffice, wkhtmltopdf)
+# No additional Python packages needed
+
+# Utilities (included in Python stdlib)
+# - xml.etree.ElementTree
+# - zipfile
+# - pathlib
+# - dataclasses
+# - argparse
+# - tempfile
+# - shutil
+# - subprocess
+
+# Optional: For enhanced PDF handling
+# pypdf2>=3.0.0  # If needed for PDF manipulation
+# reportlab>=4.0.0  # Alternative PDF generation
+
+# Development
+# pytest>=7.0.0
+# black>=23.0.0
+# mypy>=1.0.0
